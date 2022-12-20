@@ -2,10 +2,12 @@ import java.lang.reflect.Constructor;
 
 public class Product {
 
-    private int id;
-    private String name;
-    private int price;
-    
+    protected int id;
+    protected String name;
+    protected int price;
+    public Product() {
+        super();
+    }
 
     public Product(int id, String name, int price) {
         this.id=id;
