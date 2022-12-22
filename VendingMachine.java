@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.function.ToDoubleBiFunction;
 
 public class VendingMachine {
     private static ArrayList<Product> products = new ArrayList<Product>();
@@ -17,8 +16,12 @@ public class VendingMachine {
         }
     }
 
-    public void setQuanty(int id, int quanty){
-        quantities.set(id-1, quanty);
+    public int size() {
+        return products.size();
+    }
+
+    public static void setQuanty(int id, int quanty) {
+        quantities.set(id - 1, quanty);
     }
 
     public void addProduct(int id, String name, int price, Integer quanty) {
@@ -27,8 +30,8 @@ public class VendingMachine {
 
     }
 
-    public int getQuanty(int id){
-        return(quantities.get(id-1));
+    public int getQuanty(int id) {
+        return (quantities.get(id - 1));
 
     }
 
@@ -53,7 +56,7 @@ public class VendingMachine {
             }
 
         }
-        setQuanty(id, getQuanty(id)-amount);
+        setQuanty(id, getQuanty(id) - amount);
         System.out.format("Возьмите %d %s", amount, products.get(id - 1).getName());
         System.out.println();
         if (cash > price) {
